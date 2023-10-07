@@ -72,7 +72,7 @@
                         <button class="cart__send" title="Отправить" type="button">
                             <i class="fa-solid fa-arrow-up-long"></i>
                         </button>
-                        <a href="change.html" class="cart__swap" title="Обменять" type="button">
+                        <a href="{% url 'change' %}" class="cart__swap" title="Обменять" type="button">
                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
                         </a>
                         <button class="cart__add" title="Депозит" type="button">
@@ -161,81 +161,7 @@
                             <div class="tab__content" id="transactions">
 
                                 <ul class="history-list">
-                                    <li>
-                                        <div  class="history-left">
-                                <span class="history-img">
-                                    <img src="../img/jpg/img.jpg" alt="">
-                                </span>
-                                            <div class="history-name">
-                                                <span>Антон</span>
-                                                <p>27 апреля в 22:01</p>
-                                            </div>
-                                        </div>
-                                        <div class="history-right history-error">
-                                            <span>0,0003 BTC</span>
-                                            <p>Отменено</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div  class="history-left">
-                                <span class="history-img">
-                                    <img src="../img/img2.png" alt="">
-                                </span>
-                                            <div class="history-name">
-                                                <span>Саша</span>
-                                                <p>25 апреля в 23:16</p>
-                                            </div>
-                                        </div>
-                                        <div class="history-right">
-                                            <span>0,0021 BTC</span>
-                                            <p>Отправлено</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div  class="history-left">
-                                <span class="history-img">
-                                    <i class="mdi mdi-hand-coin-outline"></i>
-                                </span>
-                                            <div class="history-name">
-                                                <span>Чек</span>
-                                                <p>25 апреля в 17:30</p>
-                                            </div>
-                                        </div>
-                                        <div class="history-right history-ok">
-                                            <span>+2.0 USDT</span>
-                                            <p>Получено </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div  class="history-left">
-                                <span class="history-img">
-                                    <img src="../img/img2.png" alt="">
-                                </span>
-                                            <div class="history-name">
-                                                <span>Андрей</span>
-                                                <p>24 апреля в 16:43</p>
-                                            </div>
-                                        </div>
-                                        <div class="history-right">
-                                            <span>2.0 USDT</span>
-                                            <p>Отправлено </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div  class="history-left">
-                                <span class="history-img">
-                                    <i class="mdi mdi-hand-coin-outline"></i>
-                                </span>
-                                            <div class="history-name">
-                                                <span>Чек</span>
-                                                <p>20 апреля в 12:24</p>
-                                            </div>
-                                        </div>
-                                        <div class="history-right history-ok">
-                                            <span>+0,00002 BTC</span>
-                                            <p>Получено </p>
-                                        </div>
-                                    </li>
+
                                 </ul>
 
                             </div>
@@ -249,31 +175,7 @@
             </div>
         </div>
 
-
-
-        <div class="bar__block">
-
-            <div class="bar__container">
-
-                <div class="bar__ctx bar__ctx-1">
-                    <a title="Профиль" href="profile.html"><i class="fa-regular fa-user"></i></a>
-
-                    <a class="bar__active" title="Кошелёк" href="wallet.html"><i class="fa-solid fa-wallet"></i></a>
-                </div>
-
-                <a href="analyst.html" class="bar__button change__button">
-                    <i class="fa-solid fa-chart-column"></i>
-                </a>
-
-                <div class="bar__ctx bar__ctx-2">
-                    <a title="Обмен" href="change.html"> <i class="fa-solid fa-arrow-right-arrow-left"></i></a>
-
-                    <a class="cart__chart" title="Аналитика" href="#"><i class="fa-solid fa-chart-pie"></i></a>
-                </div>
-
-            </div>
-
-        </div>
+        {% include "../module/bar.html" with active="wallet" %}
 
     </main>
 

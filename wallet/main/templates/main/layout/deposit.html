@@ -1,0 +1,95 @@
+{% extends 'main/module/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Депозит
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+{% endblock %}
+
+
+{% block content %}
+
+    <!--
+
+    coin = request.GET.get("coin")
+    ..................
+
+    -->
+
+    <main class="wrapper" id="wrapper">
+
+        <div class="deposit__section">
+
+            <div class="container deposit__container">
+
+                <a class="ref-back" href="{% url 'wallet' %}"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</a>
+
+                <div class="deposit__content">
+                    <div class="depo__method">
+                        <div class="dt__wrap">
+                            <div class="dt-title">
+                                <span>
+                                    <img src="{% static "img/coin/usd.png" %}" alt="">
+                                </span>
+                                <p>USD</p>
+                            </div>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                        <div style="position: relative">
+                            <div class="dt__popup">
+                                <a class="dt-a" href="{% url 'deposit' 2 %}">
+                                    <span><img src="{% static "img/coin/etherium.png" %}" alt=""></span>
+                                    <p>Etherium</p>
+                                </a>
+                                <a class="dt-a" href="{% url 'deposit' 3 %}">
+                                    <span><img src="{% static "img/coin/tether.png" %}" alt=""></span>
+                                    <p>Tether</p>
+                                </a>
+                                <a class="dt-a" href="{% url 'deposit' 4 %}">
+                                    <span><img src="{% static "img/coin/avalanche.png" %}" alt=""></span>
+                                    <p>Avalanche</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="depo__net">
+                        <span class="dn-title">Сеть для депозита</span>
+                        <select id="net__select" name="net">
+                            <option value="1">USDC-ERC20</option>
+                        </select>
+                    </div>
+
+                    <div class="depo__qr">
+                        <div class="qr__wrap">
+                            <span class="qr__span">
+                                <img src="{% static "img/png/qr.png" %}" alt="">
+                            </span>
+                        </div>
+                        <div class="address_wrap">
+                            <span class="da-title">Депозитный адрес</span>
+                            <div class="da-address">
+                                <span class="deposit-address">0x8041fkf252f2352g56123f30234f32502325f</span>
+                                <button onclick="copyAddress()" class="address-copy"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="depo__min">
+                        <span class="dm-l">Минимальный <br /> размер депозита</span>
+                        <span class="dm-r">0,000000001 USD</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="{% static "scripts/index.js" %}"></script>
+    <script src="{% static "scripts/deposit.js" %}"></script>
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'main/module/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Профиль
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+{% endblock %}
+
+
+{% block content %}
+    <main class="wrapper wrapper__top" id="wrapper">
+
+        <div class="wrapper__content">
+            <div class="content__block">
+
+                <div class="container">
+
+                    <div class="profile__head">
+
+                        <span>Привет, jamescyan01</span>
+
+                        <div class="bell__container">
+
+                            <div class="bell__bth">
+                                <i class="fa-regular fa-bell"></i>
+                            </div>
+
+                            <div class="bell__active"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="profile__info">
+
+                        <div class="profile__avatar">
+                            <img src="{% static "img/img2.png" %}" alt="">
+                        </div>
+
+                        <span class="profile__name">
+                            jamescyan01
+                        </span>
+
+                        <p class="profile__code">0x7ngmfksjgy9e2yghfewf1</p>
+
+                    </div>
+
+                    <div class="profile__block">
+
+                        <span class="lvl__name">Уровень 1</span>
+
+                        <p class="lvl__text">100 очков для следующего уровня</p>
+
+                        <div class="progress__wrap">
+
+                            <span class="progress__to">1</span>
+
+                            <div class="progress__bar">
+                                <!-- ЗДЕСЬ УКАЗЫВАТЬ ПРОГРЕСС В ПРОЦЕНТАХ -->
+                                <span style="width: 70%"></span>
+                            </div>
+
+                            <span class="progress__from">2</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="profile__block">
+
+                        <div class="pb__flex">
+
+                            <div>
+                                <span class="lvl__name">Система достижений</span>
+
+                                <p class="lvl__text">Зарабатывайте достижения и получайте очки вместе с нами</p>
+
+                            </div>
+
+                            <div class="rocket__wrapper">
+                                <img src="{% static "img/png/rocket.png" %}" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="profile__button">
+
+                        <a href="{% url 'achievement' %}">
+                            <i class="fa-solid fa-trophy"></i>
+                            Достижения
+                        </a>
+
+                        <a href="{% url 'referral' %}">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Реферальная система
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        {% include "../module/bar.html" with active="profile" %}
+
+    </main>
+
+    <script src="{% static "scripts/swipe.js" %}"></script>
+    <script src="{% static "scripts/index.js" %}"></script>
+{% endblock %}

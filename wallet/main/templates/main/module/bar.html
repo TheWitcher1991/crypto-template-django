@@ -1,0 +1,23 @@
+ <div class="bar__block">
+
+            <div class="bar__container">
+
+                <div class="bar__ctx bar__ctx-1">
+                    <a {% if active == "profile" %} class="bar__active" {% endif %} title="Профиль" href="{% url 'profile' %}"><i class="fa-regular fa-user"></i></a>
+
+                    <a {% if active == "wallet" %} class="bar__active" {% endif %} title="Кошелёк" href="{% url 'wallet' %}"><i class="fa-solid fa-wallet"></i></a>
+                </div>
+
+                <a href="{% url 'analyst' %}" class="bar__button change__button">
+                    <i class="fa-solid fa-chart-column"></i>
+                </a>
+
+                <div class="bar__ctx bar__ctx-2">
+                    <a {% if active == "change" %} class="bar__active" {% endif %} title="Обмен" href="{% url 'change' %}"> <i class="fa-solid fa-arrow-right-arrow-left"></i></a>
+
+                    <a class="cart__chart" title="Аналитика" href="#"><i class="fa-solid fa-chart-pie"></i></a>
+                </div>
+
+            </div>
+
+        </div>

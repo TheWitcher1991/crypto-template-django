@@ -1,115 +1,64 @@
-<!-- ЭТО Регистрация -->
+{% extends 'main/module/base.html' %}
 
-<!DOCTYPE html>
-<!--[if lt IE 6 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie6" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 7 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie7" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 8 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie8" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 9 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie9" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 10 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie10" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if (gte IE 11)|!(IE)]><!-->
-<html itemscope itemtype="https://schema.org/WebPage" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr">
-<!--<![endif]-->
-<head>
+{% load static %}
 
-    <!-- SEO -->
-    <meta charset="utf-8" />
-    <title itemprop="name">Регистрация</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="canonical" href="">
-    <meta http-equiv="content-language" content="ru">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="x-dns-prefetch-control" content="on">
+{% block title %}
+Регистрация
+{% endblock %}
 
-    <link rel="shortcut icon" href="" type="image/x-icon" />
-    <link rel="icon" href="" type="image/x-icon">
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+<link rel="stylesheet" href="{% static "styles/messages.css" %}" />
+<link rel="stylesheet" href="{% static "styles/auth.css" %}" />
+{% endblock %}
 
-    <!-- Link libs -->
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css"
-            integrity="sha512-LX0YV/MWBEn2dwXCYgQHrpa9HJkwB+S+bnBpifSOTO1No27TqNMKYoAn6ff2FBh03THAzAiiCwQ+aPX+/Qt/Ow=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
+{% block content %}
+    <main class="wrapper" id="wrapper">
 
+        <span class="planet-one">
+            <img src="{% static "img/png/ПЛАНЕТА1.png" %}" alt="">
+        </span>
 
-    <link rel="stylesheet" href="./styles/vars.css" />
-    <link rel="stylesheet" href="./styles/animation.css" />
-    <link rel="stylesheet" href="./styles/messages.css" />
-    <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="./styles/auth.css" />
-</head>
-<body class="body-wallet mobile-wallet">
+        <span class="planet-two">
+            <img src="{% static "img/png/ПЛАНЕТА2.png" %}" alt="">
+        </span>
 
-<main class="wrapper" id="wrapper">
+        <span class="planet-three">
+            <img src="{% static "img/png/front-shapes.png" %}" alt="">
+        </span>
 
-    <span class="planet-one">
-        <img src="img/png/ПЛАНЕТА1.png" alt="">
-    </span>
+        <div class="auth__section">
 
-    <span class="planet-two">
-        <img src="img/png/ПЛАНЕТА2.png" alt="">
-    </span>
+            <h1>Твой персональный <br /> крипто-кошелек</h1>
 
-    <span class="planet-three">
-        <img src="img/png/front-shapes.png" alt="">
-    </span>
+            <div class="auth__container">
 
-    <div class="auth__section">
+                <form class="popup__form" method="POST" novalidate>
+                    <span class="form__h1">Регистрация</span>
 
-        <h1>Твой персональный <br /> крипто-кошелек</h1>
+                    {% csrf_token %}
 
-        <div class="auth__container">
+                    {% for field in form %}
 
-            <form class="popup__form" action="" method="post">
+                        <label class="popup__label label__email" for="{{ field.auto_id }}">
+                            <span class="popup__label-span">{{ field.label }}</span>
+                            {{ field }}
+                        </label>
 
-                <span class="form__h1">Регистрация</span>
+                    {% endfor %}
 
-                <label class="popup__label label__email" for="email">
-                    <span class="popup__label-span">Email</span>
-                    <input class="popup__label-input" id="email" type="email" name="email" required>
-                </label>
+                    <button class="popup__button create__reg" type="submit"><i class="fa-solid fa-user-plus"></i> Регистрация</button>
 
-                <label class="popup__label label__login" for="login">
-                    <span class="popup__label-span">Логин</span>
-                    <input class="popup__label-input" id="login" type="text" name="login" required>
-                </label>
+                    <div class="form__a">
+                        У вас уже есть аккаунт?
+                        <a href="{% url 'auth' %}">Войти</a>
+                    </div>
 
-                <label class="popup__label label__password" for="password">
-                    <span class="popup__label-span">Пароль</span>
-                    <input class="popup__label-input" id="password" type="password" name="password" required>
-                </label>
+                </form>
 
-                <label class="popup__label label__lost" for="lost-password">
-                    <span class="popup__label-span">Подтверждение пароля</span>
-                    <input class="popup__label-input" id="lost-password" type="password" name="lost-password" required>
-                </label>
-
-                <button class="popup__button create__reg" type="button"><i class="fa-solid fa-user-plus"></i> Регистрация</button>
-
-                <div class="form__a">
-                    У вас уже есть аккаунт?
-                    <a href="#">Войти</a>
-                </div>
-
-            </form>
+            </div>
 
         </div>
 
-    </div>
-
-</main>
-
-</body>
-</html>
+    </main>
+{% endblock %}

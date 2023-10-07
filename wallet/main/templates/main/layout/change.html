@@ -1,0 +1,93 @@
+{% extends 'main/module/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Обменять
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+{% endblock %}
+
+
+{% block content %}
+<main class="wrapper wrapper__top" id="wrapper">
+
+    <div class="popup__container">
+
+        <div onclick="window.history.back()" class="pop__close"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</div>
+
+        <h1 class="pop__title">Обменять</h1>
+
+        <form class="popup__form" action="" method="post">
+
+            <label class="popup__label" for="">
+                <span class="popup__label-span">Внесете</span>
+                <div class="pl-flex">
+                    <input class="popup__label-input" id="to__change" type="text" name="to__send" required>
+                    <div id="assets__change-to" class="selector__wrap">
+                        <div class="selector__head">
+                            <div class="selector__title">
+                            <span class="selector__img">
+                                <img src="{% static "img/coin/etherium.png" %}" alt="">
+                            </span>
+
+                                <div>
+                                    <span class="selector__name">Etherium</span>
+                                    <p class="selector__more">1.02 ETH</p>
+                                </div>
+                            </div>
+
+                            <div class="selector__arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+
+                        <div class="selector__pop">
+
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+            <div class="popup__block-arrow">
+                <button type="button" class="change-swap">
+                    <img src="{% static "img/png/Vertical_switch_long_light.png" %}" alt="">
+                </button>
+            </div>
+
+            <label class="popup__label" for="">
+                <span class="popup__label-span">Получите</span>
+                <div class="pl-flex">
+                    <input class="popup__label-input" id="from__change" type="text" name="to__send" required>
+                    <div id="assets__change-from" class="selector__wrap">
+                        <div class="selector__head">
+                            <div class="selector__title">
+                            <span class="selector__img">
+                                <img src="{% static "img/coin/tether.png" %}" alt="">
+                            </span>
+
+                                <div>
+                                    <span class="selector__name">Tether</span>
+                                    <p class="selector__more">12.7 USDT</p>
+                                </div>
+                            </div>
+
+                            <div class="selector__arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+
+                        <div class="selector__pop">
+
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+            <button class="popup__button" type="button"><i class="fa-solid fa-dice"></i> Обменять</button>
+
+        </form>
+
+    </div>
+
+</main>
+{% endblock %}
+

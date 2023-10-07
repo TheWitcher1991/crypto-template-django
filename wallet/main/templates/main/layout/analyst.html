@@ -1,67 +1,17 @@
-<!-- ЭТО АНАЛИТИКА -->
+{% extends 'main/module/base.html' %}
 
-<!DOCTYPE html>
-<!--[if lt IE 6 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie6" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 7 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie7" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 8 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie8" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 9 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie9" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 10 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie10" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if (gte IE 11)|!(IE)]><!-->
-<html itemscope itemtype="https://schema.org/WebPage" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr">
-<!--<![endif]-->
-<head>
+{% load static %}
 
-    <!-- SEO -->
-    <meta charset="utf-8" />
-    <title itemprop="name">Аналитика</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="canonical" href="">
-    <meta http-equiv="content-language" content="ru">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="x-dns-prefetch-control" content="on">
+{% block title %}
+Аналитика
+{% endblock %}
 
-    <!-- Link libs -->
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css"
-            integrity="sha512-LX0YV/MWBEn2dwXCYgQHrpa9HJkwB+S+bnBpifSOTO1No27TqNMKYoAn6ff2FBh03THAzAiiCwQ+aPX+/Qt/Ow=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+{% endblock %}
 
-    <!-- Apex charts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.css" integrity="sha512-5k2n0KtbytaKmxjJVf3we8oDR34XEaWP2pibUtul47dDvz+BGAhoktxn7SJRQCHNT5aJXlxzVd45BxMDlCgtcA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="../styles/vars.css" />
-    <link rel="stylesheet" href="../styles/animation.css" />
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/layout.css" />
-</head>
-<body class="body-wallet mobile-wallet">
-
-<div class="bth__popup">
-
-    <div class="bth-p__container">
-
-        <div class="bp__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-
-    </div>
-
-</div>
-
+{% block content %}
 <main class="wrapper" id="analyst">
 
     <div class="analyst__section">
@@ -69,7 +19,7 @@
         <div class="analyst__header">
 
             <div class="container">
-                <a class="all-back" href="wallet.html"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</a>
+                <a class="all-back" href="{% url 'wallet' %}"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</a>
 
                 <div class="analyst__number">
                     <div class="acn__left">
@@ -142,10 +92,10 @@
                                                 <div class="pd__percent">3.15%</div>
                                             </div>
                                             <div class="pd__footer">
-                                                <img class="pd__left-coin" src="../img/png/quest.png" alt="" />
+                                                <img class="pd__left-coin" src="{% static "img/png/quest.png" %}" alt="" />
                                                 <span class="pd__coin-l">10</span>
                                                 <span class="pd__equals">&asymp;</span>
-                                                <img class="pd__right-coin" src="../img/coin/bitcoin.png" alt="" />
+                                                <img class="pd__right-coin" src="{% static "img/coin/bitcoin.png" %}" alt="" />
                                                 <span class="pd__coin-r">0.022</span>
                                             </div>
                                         </div>
@@ -156,10 +106,10 @@
                                                 <div class="pd__percent">19.6%</div>
                                             </div>
                                             <div class="pd__footer">
-                                                <img class="pd__left-coin" src="../img/png/quest.png" alt="" />
+                                                <img class="pd__left-coin" src="{% static "img/png/quest.png" %}" alt="" />
                                                 <span class="pd__coin-l">10</span>
                                                 <span class="pd__equals">&asymp;</span>
-                                                <img class="pd__right-coin" src="../img/coin/bitcoin.png" alt="" />
+                                                <img class="pd__right-coin" src="{% static "img/coin/bitcoin.png" %}" alt="" />
                                                 <span class="pd__coin-r">0.22</span>
                                             </div>
                                         </div>
@@ -173,10 +123,10 @@
                                                 <div class="pd__percent">78.19%</div>
                                             </div>
                                             <div class="pd__footer">
-                                                <img class="pd__left-coin" src="../img/png/quest.png" alt="" />
+                                                <img class="pd__left-coin" src="{% static "img/png/quest.png" %}" alt="" />
                                                 <span class="pd__coin-l">10</span>
                                                 <span class="pd__equals">&asymp;</span>
-                                                <img class="pd__right-coin" src="../img/coin/bitcoin.png" alt="" />
+                                                <img class="pd__right-coin" src="{% static "img/coin/bitcoin.png" %}" alt="" />
                                                 <span class="pd__coin-r">2.2</span>
                                             </div>
                                         </div>
@@ -187,10 +137,10 @@
                                                 <div class="pd__percent">999.9%</div>
                                             </div>
                                             <div class="pd__footer">
-                                                <img class="pd__left-coin" src="../img/png/quest.png" alt="" />
+                                                <img class="pd__left-coin" src="{% static "img/png/quest.png" %}" alt="" />
                                                 <span class="pd__coin-l">10</span>
                                                 <span class="pd__equals">&asymp;</span>
-                                                <img class="pd__right-coin" src="../img/coin/bitcoin.png" alt="" />
+                                                <img class="pd__right-coin" src="{% static "img/coin/bitcoin.png" %}" alt="" />
                                                 <span class="pd__coin-r">22</span>
                                             </div>
                                         </div>
@@ -209,7 +159,7 @@
                 <div class="api__box api__coin-box">
                     <div class="cb__flex">
                         <div class="cb__left">
-                            <img src="../img/png/quest.png" alt="" />
+                            <img src="{% static "img/png/quest.png" %}" alt="" />
                             <span>COIN</span>
                         </div>
                         <div class="cb__right">
@@ -237,10 +187,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js" integrity="sha512-bp/xZXR0Wn5q5TgPtz7EbgZlRrIU3tsqoROPe9sLwdY6Z+0p6XRzr7/JzqQUfTSD3rWanL6WUVW7peD4zSY/vQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- Слайдер -->
-<script src="../scripts/slider.js"></script>
+<script src="{% static "scripts/slider.js" %}"></script>
 
-<script src="../scripts/analyst.js"></script>
-<script src="../scripts/index.js"></script>
+<script src="{% static "scripts/analyst.js" %}"></script>
+<script src="{% static "scripts/index.js" %}"></script>
 
 <script>
 
@@ -570,6 +520,4 @@
     })
 
 </script>
-
-</body>
-</html>
+{% endblock %}

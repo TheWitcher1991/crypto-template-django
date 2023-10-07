@@ -1,0 +1,212 @@
+{% extends 'main/module/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Достижения
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <main class="wrapper" id="wrapper">
+
+        <header class="auch__header">
+
+            <img src="{% static "img/png/rocket-ref.png" %}" alt="">
+
+            <div class="container">
+
+                <a href="{% url 'profile' %}"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</a>
+
+                <span>
+                    Зарабатывайте достижения и получайте очки вместе с нами
+                </span>
+
+            </div>
+
+        </header>
+
+        <div class="auch__wrapper">
+
+            <div class="container">
+
+                <div class="auch-title">Достижения</div>
+
+                <div class="auch__list">
+
+                    <div class="ref__ctx ref__good">
+                        <div class="ref__icon ref__icon-good">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="ref__text">Первый джекпот</div>
+                    </div>
+
+                    <div class="ref__ctx ref__progress">
+                        <div class="ref__icon ref__icon-progress"
+
+                             style="
+                             background:
+                             radial-gradient(
+                                closest-side, #111342 79%,
+                                transparent 80% 100%),
+                                /* УКАЗЫВАТЬ ЗНАЧЕНИЯ В ПРОЦЕНТАХ ВМЕСТО 25% */
+                             conic-gradient(#6505B4 25%, #cccccc 0)
+                             ;
+                                "
+
+                        >
+                        </div>
+                        <div class="ref__text">Пригласить <span>2</span> рефералов</div>
+                    </div>
+
+                    <div class="ref__ctx ref__progress">
+                        <div class="ref__icon ref__icon-progress"
+
+                             style="
+                             background:
+                             radial-gradient(
+                                closest-side, #111342 79%,
+                                transparent 80% 100%),
+                             conic-gradient(#6505B4 55%, #cccccc 0)
+                             ;
+                                "
+
+                        >
+                        </div>
+                        <div class="ref__text">Пригласить <span>4</span> рефералов</div>
+                    </div>
+
+                    <div class="ref__ctx ref__progress">
+                        <div class="ref__icon ref__icon-progress"
+
+                             style="
+                             background:
+                             radial-gradient(
+                                closest-side, #111342 79%,
+                                transparent 80% 100%),
+                             conic-gradient(#6505B4 75%, #cccccc 0)
+                             ;
+                                "
+
+                        >
+                        </div>
+                        <div class="ref__text">Пригласить <span>8</span> рефералов</div>
+                    </div>
+
+                    <div class="ref__ctx ref__good">
+                        <div class="ref__icon ref__icon-good">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="ref__text">Пригласить <span>16</span> рефералов</div>
+                    </div>
+
+                    <div class="ref__ctx ref__progress">
+                        <div class="ref__icon ref__icon-progress"
+
+                             style="
+                             background:
+                             radial-gradient(
+                                closest-side, #111342 79%,
+                                transparent 80% 100%),
+                             conic-gradient(#6505B4 35%, #cccccc 0)
+                             ;
+                                "
+
+                        >
+                        </div>
+                        <div class="ref__text">Вложить в фарм <span>100</span></div>
+                    </div>
+
+                    <div class="ref__ctx ref__progress">
+                        <div class="ref__icon ref__icon-progress"
+
+                             style="
+                             background:
+                             radial-gradient(
+                                closest-side, #111342 79%,
+                                transparent 80% 100%),
+                             conic-gradient(#6505B4 65%, #cccccc 0)
+                             ;
+                                "
+
+                        >
+                        </div>
+                        <div class="ref__text">Вложить в фарм <span>500</span></div>
+                    </div>
+
+                    <div class="ref__ctx ref__good">
+                        <div class="ref__icon ref__icon-good">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="ref__text">Вложить в фарм <span>1000</span></div>
+                    </div>
+
+                    <div class="ref__ctx ref__progress">
+                        <div class="ref__icon ref__icon-progress"
+
+                             style="
+                             background:
+                             radial-gradient(
+                                closest-side, #111342 79%,
+                                transparent 80% 100%),
+                             conic-gradient(#6505B4 25%, #cccccc 0)
+                             ;
+                                "
+
+                        >
+                        </div>
+                        <div class="ref__text">Удерживать деньги на фарме <span>5</span> дней</div>
+                    </div>
+
+                    <div class="ref__ctx ref__progress">
+                        <div class="ref__icon ref__icon-progress"
+
+                             style="
+                             background:
+                             radial-gradient(
+                                closest-side, #111342 79%,
+                                transparent 80% 100%),
+                             conic-gradient(#6505B4 50%, #cccccc 0)
+                             ;
+                                "
+
+                        >
+                        </div>
+                        <div class="ref__text">Удерживать деньги на фарме <span>10</span> дней</div>
+                    </div>
+
+                    <div class="ref__ctx ref__progress">
+                        <div class="ref__icon ref__icon-progress"
+
+                             style="
+                             background:
+                             radial-gradient(
+                                closest-side, #111342 79%,
+                                transparent 80% 100%),
+                             conic-gradient(#6505B4 75%, #cccccc 0)
+                             ;
+                                "
+
+                        >
+                        </div>
+                        <div class="ref__text">Удерживать деньги на фарме <span>15</span> дней</div>
+                    </div>
+
+                    <div class="ref__ctx ref__good">
+                        <div class="ref__icon ref__icon-good">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="ref__text">Удерживать деньги на фарме <span>20</span> дней</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+{% endblock %}

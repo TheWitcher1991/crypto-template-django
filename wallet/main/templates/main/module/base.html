@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 6 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie6" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 7 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie7" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 8 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie8" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 9 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie9" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
-<!--[if IE 10 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie10" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if lt IE 6 ]><html class="ie ie6" lang="ru" dir="ltr"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="ru" dir="ltr"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="ru" dir="ltr"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="ru" dir="ltr"> <![endif]-->
+<!--[if IE 10 ]><html class="ie ie10" lang="ru" dir="ltr"> <![endif]-->
 <!--[if (gte IE 11)|!(IE)]><!-->
 {% load static %}
-<html itemscope itemtype="https://schema.org/WebPage" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr">
+<html lang="ru" dir="ltr">
 <!--<![endif]-->
 <head>
 
@@ -37,7 +37,6 @@
             integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -51,22 +50,34 @@
 </head>
 <body class="body-wallet mobile-wallet">
 
-<div class="swipe__loader">
-    <div class="lds-default">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div class="swipe__loader">
+        <div class="lds-default">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-</div>
+
+    <div class="bth__popup">
+
+        <div class="bth-p__container">
+
+            <div class="bp__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+
+        </div>
+
+    </div>
 
     <div class="popup__section popup__get">
 
@@ -89,7 +100,7 @@
                         <div class="selector__head">
                             <div class="selector__title">
                                 <span class="selector__img">
-                                    <img src="../img/coin/etherium.png" alt="">
+                                    <img src="{% static "img/coin/etherium.png" %}" alt="">
                                 </span>
 
                                 <div>
@@ -141,7 +152,7 @@
                         <div class="selector__head">
                             <div class="selector__title">
                                 <span class="selector__img">
-                                    <img src="../img/coin/etherium.png" alt="">
+                                    <img src="{% static "img/coin/etherium.png" %}" alt="">
                                 </span>
 
                                 <div>
@@ -189,7 +200,7 @@
                 <a onclick="" class="btp-wrap">
                     <div class="btp-title">
                         <span>
-                           <img src="../img/coin/ton.png" alt="">
+                           <img src="{% static "img/coin/ton.png" %}" alt="">
                         </span>
                         <p>TON wallet</p>
                     </div>
@@ -199,7 +210,7 @@
                 <a onclick="" class="btp-wrap">
                     <div class="btp-title">
                         <span>
-                           <img src="../img/coin/ton.png" alt="">
+                           <img src="{% static "img/coin/ton.png" %}" alt="">
                         </span>
                         <p>Перевод на адрес TON</p>
                     </div>
@@ -207,10 +218,10 @@
                 </a>
 
                 <!-- GET запрос coin=1, 1 - это, например, etherium, 2 - usdt, и т.д., ну или свои тип, имя запроса -->
-                <a href="deposit.html?coin=1" class="btp-wrap">
+                <a href="{% url 'deposit' 1 %}" class="btp-wrap">
                     <div class="btp-title">
                         <span>
-                           <img src="../img/coin/usd.png" alt="">
+                           <img src="{% static "img/coin/usd.png" %}" alt="">
                         </span>
                         <p>Перевод с кошелька USD</p>
                     </div>

@@ -1,0 +1,137 @@
+{% extends 'main/module/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Реферальная система
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <main class="wrapper" id="wrapper">
+
+        <div class="referral__section">
+
+            <div class="container">
+
+                <a class="ref-back" href="{% url 'profile' %}"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</a>
+
+                <div class="bonus__block">
+
+                    <div>
+
+                        <span class="active__bonus">$ 30</span>
+                        <p>Активные бонусы</p>
+
+                    </div>
+
+                    <div>
+
+                        <span class="none__bonus">$ 0</span>
+                        <p>Использованные бонусы</p>
+
+                    </div>
+
+                </div>
+
+                <div class="copy__block">
+
+                    <img src="{% static "img/png/front-shapes.png" %}" alt="">
+
+                    <div class="copy__relative">
+
+                        <img src="{% static "img/png/ref-2.png" %}" alt="">
+
+                        <span>Пригласи друга и получи бонус</span>
+
+                        <p>Отправь другу свой код и получи бонус при следующем пополнении</p>
+
+                        <div class="copy__flex">
+
+                            <div class="copy__ctx">
+                                <i class="fa-regular fa-copy"></i> TR2NY
+                            </div>
+
+                            <button class="copy__bth">Пригласить друзей</button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ref__history">
+
+                    <div class="rh-title">История приглашений</div>
+
+                    <div class="rh__list">
+
+                        <div class="rh__ctx">
+
+                            <div class="rh-left">
+
+                                <div class="rh__title"><span>от:</span> miky</div>
+
+                                <p class="rh__text-ok">Награда за приглашение</p>
+
+                            </div>
+
+                            <div class="rh-right">
+
+                                <span class="rh__get">+ 15%</span>
+
+                                <p class="rh__time">25 апреля 2023 15:57</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rh__ctx">
+
+                            <div class="rh-left">
+
+                                <div class="rh__title">miky</div>
+
+                                <p class="rh__text">Приглашение отправлено</p>
+
+                            </div>
+
+                            <div class="rh-right">
+
+                                <p class="rh__time">24 апреля 2023 13:57</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rh__ctx">
+
+                            <div class="rh-left">
+
+                                <div class="rh__title">thewitcher</div>
+
+                                <p class="rh__text">Приглашение отправлено</p>
+
+                            </div>
+
+                            <div class="rh-right">
+
+                                <p class="rh__time">23 апреля 2023 12:57</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </main>
+{% endblock %}
