@@ -1,0 +1,47 @@
+.msg__box {
+    padding: 16px;
+    text-align: left;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    cursor: default;
+    display: block;
+    position: absolute;
+    background: var(--bgBlue500);
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    backdrop-filter: blur(15px);
+    z-index: 100;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.msg__box p {
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.msg__box p i {
+    margin: 0 6px 0 0;
+}
+
+.msg__progress {
+    width: 0;
+    height: 5px;
+    background: var(--actLinear);
+    border-radius: 3px;
+    margin: 10px 0 0 0;
+
+}
+
+.msg__box.msg__box-active {
+    display: block;
+    animation: fadeOut 4s linear forwards;
+}
+
+.msg__box.msg__box-active .msg__progress {
+    animation: runProgress 3s linear forwards 0.5s;
+}

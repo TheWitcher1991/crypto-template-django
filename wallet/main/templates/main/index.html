@@ -1,0 +1,46 @@
+{% extends 'main/module/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Твой персональный крипто-кошелек
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+{% endblock %}
+
+
+{% block content %}
+    <main class="wrapper" id="wrapper">
+
+        <section class="home__section">
+
+            <div class="planet__block">
+
+                <span class="planet-one">
+                    <img src="{% static "img/png/ПЛАНЕТА1.png" %}" alt="">
+                </span>
+
+                <span class="planet-two">
+                    <img src="{% static "img/png/ПЛАНЕТА2.png" %}" alt="">
+                </span>
+
+            </div>
+
+            <div class="home__block-bth">
+                <span>
+                    <img src="{% static "img/png/ЧЕЛОВЕК.png" %}" alt="">
+                </span>
+
+                <h1>Твой персональный <br /> крипто-кошелек</h1>
+
+                <a href="{% url 'wallet' %}">
+                    <img src="{% static "img/png/ДАЛЕЕ.png" %}" alt="">
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+{% endblock %}

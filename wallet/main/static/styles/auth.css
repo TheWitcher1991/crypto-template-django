@@ -1,0 +1,153 @@
+.auth__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__span-text {
+    display: block;
+    margin: 0 0 20px 0;
+    color: var(--colorGrey);
+    font-size: 13px;
+}
+
+.auth__section > h1 {
+    font-size: 22px;
+    margin: 70px 26px;
+    padding: 0;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+}
+
+.form__h1 {
+    font-size: 19px;
+    margin: 0 0 40px 0;
+    padding: 0;
+    font-weight: 400;
+    display: block;
+    text-align: left;
+}
+
+.auth__container {
+    width: 90%;
+    background: var(--formLinear);
+    border-radius: 15px;
+    z-index: 1;
+    backdrop-filter: blur(20px);
+    padding: 40px 26px;
+}
+
+.planet-one, .planet-two, .planet-three {
+    position: absolute;
+}
+
+.planet-one {
+    top: 140px;
+    left: 0;
+}
+
+.planet-two {
+    top: 370px;
+    right: 0;
+}
+
+.planet-three {
+    top: 480px;
+    left: 36px;
+}
+
+.popup__label {
+    display: block;
+    width: 100%;
+    margin: 0 0 36px 0
+}
+
+.popup__block-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 36px 0;
+}
+
+.popup__block-arrow button {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    transition: var(--EasyInOut);
+}
+
+.popup__block-arrow button:active {
+    background: var(--colorGrass);
+}
+
+.popup__label-span {
+    display: block;
+    margin: 0 0 3px 0;
+    color: var(--colorGrey);
+    font-size: 14px;
+}
+
+.form__span {
+    text-align: right;
+    color: var(--colorAct);
+    font-size: 12px;
+    display: block;
+    margin: 13px 0 0 0;
+}
+
+.form__a {
+    text-align: center;
+    color: var(--colorGrey);
+    font-size: 12px;
+    display: block;
+    margin: 30px 0 0 0;
+}
+
+.form__a a {
+    color: var(--colorAct);
+}
+
+.popup__label-input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--colorGrey);
+    background: transparent;
+    outline: none;
+    font-family: var(--family);
+    color: var(--colorMain);
+    padding: 6px 0;
+    transition: var(--EasyInOut);
+}
+
+.popup__label-input:focus,
+.popup__label-input:active {
+    border-color: var(--colorOk);
+}
+
+.popup__button {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    margin: 60px 0 0 0;
+    background: var(--actLinear);
+    color: var(--colorMain);
+    padding: 12px 0;
+    border: 0;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    font-family: var(--family);
+    transition: var(--EasyInOut);
+    position: relative;
+    cursor: pointer;
+}
+
+.popup__button i {
+    margin: 0 6px 0 0;
+}
+
+.popup__button:active {
+    background: transparent;
+}

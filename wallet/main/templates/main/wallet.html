@@ -1,0 +1,285 @@
+{% extends 'main/module/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Кошелёк
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static "styles/messages.css" %}" />
+<link rel="stylesheet" href="{% static "styles/layout.css" %}" />
+{% endblock %}
+
+
+{% block content %}
+    <main class="wrapper wrapper__top" id="wrapper">
+
+        <div class="wrapper__content">
+            <header class="cart__block">
+
+                <div class="container__header">
+
+                    <div class="cart__head">
+
+                        <span>Привет, jamescyan01</span>
+
+
+                        <div class="bell__container">
+
+                            <div class="bell__bth">
+                                <i class="fa-regular fa-bell"></i>
+                            </div>
+
+                            <div class="bell__active"></div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="cart__outline">
+
+                    <span class="cart_title">
+                        <i class="mdi mdi-wallet-bifold-outline"></i>
+                        Баланс кошелька
+                    </span>
+
+                        <div class="cart__block-number">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <span class="cart-money">
+                            43 715
+                            <span class="cart__money-mini">
+                                .05
+                            </span>
+                        </span>
+                        </div>
+
+                        <div class="cart__block-update">
+                            <i class="fa-solid fa-arrow-up-long"></i>
+
+                            <span class="cart__update-precent">5.13%</span>
+
+                            <span class="cart__update-money">(+$240)</span>
+                        </div>
+
+                    </div>
+
+                    <div class="cart__button">
+                        <button class="cart__get" title="Принять" type="button">
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                        </button>
+                        <button class="cart__send" title="Отправить" type="button">
+                            <i class="fa-solid fa-arrow-up-long"></i>
+                        </button>
+                        <a href="change.html" class="cart__swap" title="Обменять" type="button">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </a>
+                        <button class="cart__add" title="Депозит" type="button">
+                            <i class="fa-solid fa-dice"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="content__block">
+
+                <div class="container">
+
+                    <div class="tab__wrapper">
+
+                        <div class="tab__flex">
+
+                            <div class="tab__bth">
+
+                                <div class="tab__links" onclick="walletTabs(event, '#assets')" id="defTab">Активы</div>
+
+                                <div class="tab__links" onclick="walletTabs(event, '#transactions')">Транзакции</div>
+
+                            </div>
+
+                            <div class="tab__bth-more">
+
+                                <div class="filter__button">
+                                    <i class="fa-solid fa-sliders"></i>
+                                </div>
+
+                                <div class="add__button">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="tab__content-wrap">
+
+                            <div class="tab__content" id="assets">
+
+                                <ul class="coin__list">
+
+                                    {% for el in assets %}
+                                        <li id="coin__{{ el.name }}" data-id="{{ el.name }}" class="coin__ctx">
+                                            <div class="coin__list-left">
+                                                <div class="coin__list-img">
+                                                <span>
+                                                    <img src="{% static "img/coin/" %}{{ el.img }}" alt="">
+                                                </span>
+                                                </div>
+                                                <div class="coin__list-title">
+                                                    <span class="coin__title">{{ el.name }}</span>
+                                                    <p class="coin__translator">
+                                                        1 {{ el.exp }} = <span class="ct__text">1,816.54 $</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="coin__list-right">
+                                                <span class="ba__text">$ {{ el.state }}</span>
+                                                {% if el.type == 1 %}
+                                                    <p class="ba__precent-wrap precent__up">
+                                                        <i class="fa-solid fa-arrow-up-long"></i>
+                                                        <span class="ba__precent">{{ el.mod }} %</span>
+                                                    </p>
+                                                {% else %}
+                                                    <p class="ba__precent-wrap precent__error">
+                                                        <i class="fa-solid fa-arrow-down-long"></i>
+                                                        <span class="ba__precent">{{ el.mod }} %</span>
+                                                    </p>
+                                                {% endif %}
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+
+
+
+                                </ul>
+
+                            </div>
+
+                            <div class="tab__content" id="transactions">
+
+                                <ul class="history-list">
+                                    <li>
+                                        <div  class="history-left">
+                                <span class="history-img">
+                                    <img src="../img/jpg/img.jpg" alt="">
+                                </span>
+                                            <div class="history-name">
+                                                <span>Антон</span>
+                                                <p>27 апреля в 22:01</p>
+                                            </div>
+                                        </div>
+                                        <div class="history-right history-error">
+                                            <span>0,0003 BTC</span>
+                                            <p>Отменено</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div  class="history-left">
+                                <span class="history-img">
+                                    <img src="../img/img2.png" alt="">
+                                </span>
+                                            <div class="history-name">
+                                                <span>Саша</span>
+                                                <p>25 апреля в 23:16</p>
+                                            </div>
+                                        </div>
+                                        <div class="history-right">
+                                            <span>0,0021 BTC</span>
+                                            <p>Отправлено</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div  class="history-left">
+                                <span class="history-img">
+                                    <i class="mdi mdi-hand-coin-outline"></i>
+                                </span>
+                                            <div class="history-name">
+                                                <span>Чек</span>
+                                                <p>25 апреля в 17:30</p>
+                                            </div>
+                                        </div>
+                                        <div class="history-right history-ok">
+                                            <span>+2.0 USDT</span>
+                                            <p>Получено </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div  class="history-left">
+                                <span class="history-img">
+                                    <img src="../img/img2.png" alt="">
+                                </span>
+                                            <div class="history-name">
+                                                <span>Андрей</span>
+                                                <p>24 апреля в 16:43</p>
+                                            </div>
+                                        </div>
+                                        <div class="history-right">
+                                            <span>2.0 USDT</span>
+                                            <p>Отправлено </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div  class="history-left">
+                                <span class="history-img">
+                                    <i class="mdi mdi-hand-coin-outline"></i>
+                                </span>
+                                            <div class="history-name">
+                                                <span>Чек</span>
+                                                <p>20 апреля в 12:24</p>
+                                            </div>
+                                        </div>
+                                        <div class="history-right history-ok">
+                                            <span>+0,00002 BTC</span>
+                                            <p>Получено </p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="bar__block">
+
+            <div class="bar__container">
+
+                <div class="bar__ctx bar__ctx-1">
+                    <a title="Профиль" href="profile.html"><i class="fa-regular fa-user"></i></a>
+
+                    <a class="bar__active" title="Кошелёк" href="wallet.html"><i class="fa-solid fa-wallet"></i></a>
+                </div>
+
+                <a href="analyst.html" class="bar__button change__button">
+                    <i class="fa-solid fa-chart-column"></i>
+                </a>
+
+                <div class="bar__ctx bar__ctx-2">
+                    <a title="Обмен" href="change.html"> <i class="fa-solid fa-arrow-right-arrow-left"></i></a>
+
+                    <a class="cart__chart" title="Аналитика" href="#"><i class="fa-solid fa-chart-pie"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="{% static "scripts/wallet.js" %}"></script>
+    <script src="{% static "scripts/index.js" %}"></script>
+    <script src="{% static "scripts/swipe.js" %}"></script>
+    <script src="{% static "scripts/AuthError.js" %}"></script>
+{% endblock %}
+

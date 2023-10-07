@@ -1,0 +1,38 @@
+@keyframes fadeEffect {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; transform: translateY(0px);}
+    99% { opacity: 0; transform: translateY(-30px);}
+    100% { opacity: 0; }
+}
+
+@keyframes runProgress {
+    0% { width: 0%; }
+    100% { width: 96%; }
+}
+
+@keyframes animation-open-popup {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes lds-default {
+    0%, 20%, 80%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}

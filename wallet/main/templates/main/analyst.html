@@ -1,0 +1,575 @@
+<!-- ЭТО АНАЛИТИКА -->
+
+<!DOCTYPE html>
+<!--[if lt IE 6 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie6" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if IE 7 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie7" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if IE 8 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie8" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if IE 9 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie9" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if IE 10 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie10" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if (gte IE 11)|!(IE)]><!-->
+<html itemscope itemtype="https://schema.org/WebPage" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr">
+<!--<![endif]-->
+<head>
+
+    <!-- SEO -->
+    <meta charset="utf-8" />
+    <title itemprop="name">Аналитика</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href="">
+    <meta http-equiv="content-language" content="ru">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <!-- Link libs -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css"
+            integrity="sha512-LX0YV/MWBEn2dwXCYgQHrpa9HJkwB+S+bnBpifSOTO1No27TqNMKYoAn6ff2FBh03THAzAiiCwQ+aPX+/Qt/Ow=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+    <!-- Apex charts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.css" integrity="sha512-5k2n0KtbytaKmxjJVf3we8oDR34XEaWP2pibUtul47dDvz+BGAhoktxn7SJRQCHNT5aJXlxzVd45BxMDlCgtcA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../styles/vars.css" />
+    <link rel="stylesheet" href="../styles/animation.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+</head>
+<body class="body-wallet mobile-wallet">
+
+<div class="bth__popup">
+
+    <div class="bth-p__container">
+
+        <div class="bp__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+
+    </div>
+
+</div>
+
+<main class="wrapper" id="analyst">
+
+    <div class="analyst__section">
+
+        <div class="analyst__header">
+
+            <div class="container">
+                <a class="all-back" href="wallet.html"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</a>
+
+                <div class="analyst__number">
+                    <div class="acn__left">
+                        <span class="analyst__value">$ 774.3</span>
+                        <p class="analyst__kf">(+0.013535)</p>
+                    </div>
+
+                    <div class="acn__right">
+                        <span class="analyst__precent"><i class="fa-solid fa-arrow-up-long"></i> 29991.28 %</span>
+                    </div>
+                </div>
+
+                <div class="analyst__chart chart__box">
+
+
+                    <div class="line__box">
+                        <div class="line__links" onclick="analystTabs(event, '#one-hour')">1 ч</div>
+                        <div class="line__links" onclick="analystTabs(event, '#twenty-four-hours')">24 ч</div>
+                        <div class="line__links" onclick="analystTabs(event, '#one-week')">1 н</div>
+                        <div class="line__links" onclick="analystTabs(event, '#one-month')">1 м</div>
+                        <div class="line__links" onclick="analystTabs(event, '#three-months')">3 м</div>
+                        <div class="line__links" onclick="analystTabs(event, '#one-year')" id="defTab">1 г</div>
+                        <div class="line__links" onclick="analystTabs(event, '#all-period')">Полный период</div>
+                    </div>
+
+                    <div class="chart__container">
+                        <div id="one-hour" class="chart__content">
+                            <!-- <img src="../img/png/Chart.png" alt=""> -->
+                            <div class="chart" id="one__hour-chart"></div>
+                        </div>
+                        <div id="twenty-four-hours" class="chart__content">
+                            <div class="chart" id="twenty__four__hours-chart"></div>
+                        </div>
+                        <div id="one-week" class="chart__content">
+                            <div class="chart" id="one__week-chart"></div>
+
+                        </div>
+                        <div id="one-month" class="chart__content">
+                            <div class="chart" id="one__month-chart"></div>
+                        </div>
+                        <div id="three-months" class="chart__content">
+                            <div class="chart" id="three__months-chart"></div>
+                        </div>
+                        <div id="one-year" class="chart__content">
+                            <div class="chart" id="one__year-chart"></div>
+                        </div>
+                        <div id="all-period" class="chart__content">
+                            <div class="chart" id="all_period-chart"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="analyst__api">
+            <div class="container">
+
+                <div class="api__box">
+
+                    <div class="slider">
+                        <div class="slider-list">
+                            <div class="slider-track">
+                                <div class="slide">
+                                    <div class="period__box">
+                                        <div class="pd__flex">
+                                            <div class="pd__head">
+                                                <div class="pd__title">День</div>
+                                                <div class="pd__percent">3.15%</div>
+                                            </div>
+                                            <div class="pd__footer">
+                                                <img class="pd__left-coin" src="../img/png/quest.png" alt="" />
+                                                <span class="pd__coin-l">10</span>
+                                                <span class="pd__equals">&asymp;</span>
+                                                <img class="pd__right-coin" src="../img/coin/bitcoin.png" alt="" />
+                                                <span class="pd__coin-r">0.022</span>
+                                            </div>
+                                        </div>
+                                        <div class="pd__just"></div>
+                                        <div class="pd__right">
+                                            <div class="pd__head">
+                                                <div class="pd__title">Неделя</div>
+                                                <div class="pd__percent">19.6%</div>
+                                            </div>
+                                            <div class="pd__footer">
+                                                <img class="pd__left-coin" src="../img/png/quest.png" alt="" />
+                                                <span class="pd__coin-l">10</span>
+                                                <span class="pd__equals">&asymp;</span>
+                                                <img class="pd__right-coin" src="../img/coin/bitcoin.png" alt="" />
+                                                <span class="pd__coin-r">0.22</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="period__box">
+                                        <div class="pd__flex">
+                                            <div class="pd__head">
+                                                <div class="pd__title">Месяц</div>
+                                                <div class="pd__percent">78.19%</div>
+                                            </div>
+                                            <div class="pd__footer">
+                                                <img class="pd__left-coin" src="../img/png/quest.png" alt="" />
+                                                <span class="pd__coin-l">10</span>
+                                                <span class="pd__equals">&asymp;</span>
+                                                <img class="pd__right-coin" src="../img/coin/bitcoin.png" alt="" />
+                                                <span class="pd__coin-r">2.2</span>
+                                            </div>
+                                        </div>
+                                        <div class="pd__just"></div>
+                                        <div class="pd__right">
+                                            <div class="pd__head">
+                                                <div class="pd__title">Год</div>
+                                                <div class="pd__percent">999.9%</div>
+                                            </div>
+                                            <div class="pd__footer">
+                                                <img class="pd__left-coin" src="../img/png/quest.png" alt="" />
+                                                <span class="pd__coin-l">10</span>
+                                                <span class="pd__equals">&asymp;</span>
+                                                <img class="pd__right-coin" src="../img/coin/bitcoin.png" alt="" />
+                                                <span class="pd__coin-r">22</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-arrows">
+                            <button type="button" class="prev"></button>
+                            <button type="button" class="next"></button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="api__box api__coin-box">
+                    <div class="cb__flex">
+                        <div class="cb__left">
+                            <img src="../img/png/quest.png" alt="" />
+                            <span>COIN</span>
+                        </div>
+                        <div class="cb__right">
+                            APY <span>4123.17</span>
+                            <div class="cb__popup">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="coin__val">
+                        0.1
+                    </div>
+                </div>
+
+                <button type="button" name="steak" class="bth__steak">Стейк</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- Apex charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js" integrity="sha512-bp/xZXR0Wn5q5TgPtz7EbgZlRrIU3tsqoROPe9sLwdY6Z+0p6XRzr7/JzqQUfTSD3rWanL6WUVW7peD4zSY/vQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Слайдер -->
+<script src="../scripts/slider.js"></script>
+
+<script src="../scripts/analyst.js"></script>
+<script src="../scripts/index.js"></script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        let trigoStrength = 3,
+            iteration = 11
+
+        function getRandom() {
+            let i = iteration;
+            return (Math.sin(i / trigoStrength) * (i / trigoStrength) + i / trigoStrength + 1) * (trigoStrength * 2)
+        }
+
+        function generateMinuteWiseTimeSeries(baseval, count, yrange) {
+            let i = 0,
+                series = [];
+            while (i < count) {
+                let x = baseval,
+                    y = ((Math.sin(i / trigoStrength) * (i / trigoStrength) + i / trigoStrength + 1) * (trigoStrength * 2))
+
+                series.push([x, y]);
+                baseval += 300000;
+                i++;
+            }
+            return series;
+        }
+
+        // Шаблон графика
+        const TemplateC = (selector, type, series, xaxis, chartAdd = {}) => {
+            const options = {
+                chart: {
+                    id: selector,
+                    type: type,
+                    height: 250,
+                    foreColor: "#fff",
+                    toolbar: {
+                        show: false
+                    },
+                    // Дополнительные свойства
+                    ...chartAdd
+                },
+                colors: ["#7C3AED"],
+                stroke: {
+                    width: 2,
+                    curve: 'straight'
+                },
+                grid: {
+                    borderColor: "#40475D",
+                    clipMarkers: false,
+                    yaxis: {
+                        lines: {
+                            show: true
+                        }
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                fill: {
+                    gradient: {
+                        enabled: true,
+                        opacityFrom: 0.60,
+                        opacityTo: 0
+                    }
+                },
+                // ЗНАЧЕНИЯ ПО ОСИ Y
+                series: series,
+                tooltip: {
+                    theme: "dark",
+                },
+                // ЗНАЧЕНИЯ ПО ОСИ X
+                xaxis: {
+                    ...xaxis,
+                    axisBorder: {
+                        show: false
+                    },
+                    axisTicks: {
+                        show: false
+                    },
+                    labels: {
+                        style: {
+                            colors: '#78909c'
+                        }
+                    }
+                },
+                yaxis: {
+                    min: 0,
+                    // Два знака после запятой
+                    decimalsInFloat: 2,
+                    opposite: true,
+                    // КОЛИЧЕСТВО ЛИНИЙ, КОТОРЫЕ РАЗДЕЛЯЮТ ГРАФИК УЧИТЫВАЯ 0
+                    tickAmount: 3,
+                    labels: {
+                        // Отступ слева
+                        offsetX: -5,
+                        style: {
+                            colors: '#78909c'
+                        }
+                    }
+                },
+            }
+
+            return new ApexCharts(document.querySelector(`#${selector}`), options)
+        }
+
+        /**
+         * СТАТИЧНЫЙ ГРАФИК, ВКЛАДКА "1 ГОД"
+         */
+        const ChartOneYear = TemplateC(
+            'one__year-chart',
+            'area',
+            [
+                {
+                    name: "Значение",
+                    data: [2, 23, 19, 45, 18, 52, 35, 55]
+                }
+            ],
+            {
+                categories: [
+                    "Янв",
+                    "Февр",
+                    "Апр",
+                    "Авг",
+                    "Сент",
+                    "Окт",
+                    "Нояб",
+                    "Дек",
+                ],
+            }
+        )
+
+        /**
+         * ОБНОВЛЯЮЩИЙСЯ ГРАФИК, ВКЛАДКА "ПОЛНЫЙ ПЕРИОД"
+         */
+        const chartAllPeriod = TemplateC(
+            'all_period-chart',
+            'area',
+            [
+                {
+                    name: "Значение",
+                    // Рандомные данные
+                    data: generateMinuteWiseTimeSeries(new Date("12/12/2016 00:20:00").getTime(), 12, {
+                        min: 10,
+                        max: 110
+                    })
+                }
+            ],
+            {
+                type: 'datetime',
+                range: 2700000,
+            }
+        )
+
+        // Обновление графика каждые 3 секунды
+        window.setInterval(function () {
+
+            iteration++;
+
+            // Загрузить новые данные
+            chartAllPeriod.updateSeries([{
+                data: [
+                    ...chartAllPeriod.w.config.series[0].data, // Добавляем уже имеющиеся
+                    [
+                        // Добавляем новые
+                        chartAllPeriod.w.globals.maxX + 300000,
+                        getRandom()
+                    ]
+                ]
+            }])
+
+        }, 3000)
+
+        /**
+         * СТАТИЧНЫЙ ГРАФИК, ВКЛАДКА "3 МЕСЯЦА"
+         */
+        const ChartThreeMonths = TemplateC(
+            'three__months-chart',
+            'area',
+            [
+                {
+                    name: "Значение",
+                    data: [23, 53, 19, 45, 38, 52, 75, 55]
+                }
+            ],
+            {
+                categories: [
+                    "1 Янв",
+                    "3 Янв",
+                    "5 Янв",
+                    "4 Февр",
+                    "5 Февр",
+                    "2 Март",
+                    "4 Март",
+                    "6 Март",
+                ],
+            },
+            {
+                // УБИРАЕМ ВСЕ ПОЛЯ
+                sparkline: {
+                    enabled: true
+                },
+            }
+        )
+
+        /**
+         * СТАТИЧНЫЙ ГРАФИК, ВКЛАДКА "1 МЕСЯЦ"
+         */
+        const ChartOneMonth = TemplateC(
+            'one__month-chart',
+            'area',
+            [
+                {
+                    name: "Значение",
+                    data: [23, 53, 19, 45, 38, 52, 75, 55]
+                }
+            ],
+            {
+                categories: [
+                    "1 Янв",
+                    "3 Янв",
+                    "5 Янв",
+                    "7 Янв",
+                    "12 Янв",
+                    "15 Янв",
+                    "23 Янв",
+                    "29 Янв",
+                ],
+            }
+        )
+
+        /**
+         * СТАТИЧНЫЙ ГРАФИК, ВКЛАДКА "1  НЕДЕЛЯ"
+         */
+        const ChartOneWeek = TemplateC(
+            'one__week-chart',
+            'area',
+            [
+                {
+                    name: "Значение",
+                    data: [23, 53, 19, 45, 38, 52, 75, 55]
+                }
+            ],
+            {
+                categories: [
+                    "1 Янв",
+                    "2 Янв",
+                    "3 Янв",
+                    "4 Янв",
+                    "5 Янв",
+                    "6 Янв",
+                    "7 Янв",
+                    "8 Янв",
+                ],
+            }
+        )
+
+        /**
+         * СТАТИЧНЫЙ ГРАФИК, ВКЛАДКА "24  ЧАСА"
+         */
+        const ChartTwentyFourHours = TemplateC(
+            'twenty__four__hours-chart',
+            'area',
+            [
+                {
+                    name: "Значение",
+                    data: [63, 23, 39, 45, 38, 52, 75, 55]
+                }
+            ],
+            {
+                categories: [
+                    "11:30",
+                    "12:45",
+                    "14:20",
+                    "15:50",
+                    "17:45",
+                    "19:30",
+                    "21:20",
+                    "23:30",
+                ],
+            }
+        )
+
+        /**
+         * СТАТИЧНЫЙ ГРАФИК, ВКЛАДКА "1 ЧАСА"
+         */
+        const ChartOneHour = TemplateC(
+            'one__hour-chart',
+            'area',
+            [
+                {
+                    name: "Значение",
+                    data: [63, 23, 39, 45, 38, 52, 75, 55]
+                }
+            ],
+            {
+                categories: [
+                    "11:10",
+                    "11:15",
+                    "11:20",
+                    "11:25",
+                    "11:30",
+                    "11:35",
+                    "11:40",
+                    "11:45",
+                ],
+            },
+            {
+                // УБИРАЕМ ВСЕ ПОЛЯ
+                sparkline: {
+                    enabled: true
+                },
+            }
+        )
+
+        // Рисуем графики
+        ChartOneYear.render()
+        chartAllPeriod.render()
+        ChartThreeMonths.render()
+        ChartOneMonth.render()
+        ChartOneWeek.render()
+        ChartTwentyFourHours.render()
+        ChartOneHour.render()
+
+        // Обновить график
+        // chartOneYear.update()
+
+    })
+
+</script>
+
+</body>
+</html>

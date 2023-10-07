@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if lt IE 6 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie6" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if IE 7 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie7" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if IE 8 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie8" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if IE 9 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie9" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if IE 10 ]><html itemscope itemtype="https://schema.org/WebPage" class="ie ie10" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr"> <![endif]-->
+<!--[if (gte IE 11)|!(IE)]><!-->
+{% load static %}
+<html itemscope itemtype="https://schema.org/WebPage" lang="ru" prefix="og: http://ogp.me/ns#" dir="ltr">
+<!--<![endif]-->
+<head>
+
+    <!-- SEO -->
+    <meta charset="utf-8" />
+    <title itemprop="name">
+        {% block title %}
+        {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href="">
+    <meta http-equiv="content-language" content="ru">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <!-- Link libs -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css"
+        integrity="sha512-LX0YV/MWBEn2dwXCYgQHrpa9HJkwB+S+bnBpifSOTO1No27TqNMKYoAn6ff2FBh03THAzAiiCwQ+aPX+/Qt/Ow=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static "styles/vars.css" %}" />
+    <link rel="stylesheet" href="{% static "styles/animation.css" %}" />
+    <link rel="stylesheet" href="{% static "styles/main.css" %}" />
+    {% block styles %}
+    {% endblock %}
+</head>
+<body class="body-wallet mobile-wallet">
+
+<div class="swipe__loader">
+    <div class="lds-default">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+    <div class="popup__section popup__get">
+
+        <div class="popup__container">
+
+            <div class="pop__close"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</div>
+
+            <h1 class="pop__title">Пополнить</h1>
+
+            <form class="popup__form" action="" method="post">
+
+                <label class="popup__label" for="sum__get">
+                    <span class="popup__label-span">Сумма</span>
+                    <input class="popup__label-input" id="sum__get" type="number" name="sum__get" required>
+                </label>
+
+                <label class="popup__label" for="assets__get">
+                    <span class="popup__label-span">Активы</span>
+                    <div id="assets__get" class="selector__wrap">
+                        <div class="selector__head">
+                            <div class="selector__title">
+                                <span class="selector__img">
+                                    <img src="../img/coin/etherium.png" alt="">
+                                </span>
+
+                                <div>
+                                    <span class="selector__name">Etherium</span>
+                                    <p class="selector__more">1.02 ETH</p>
+                                </div>
+                            </div>
+
+                            <div class="selector__arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+
+                        <div class="selector__pop">
+
+                        </div>
+                    </div>
+                </label>
+
+                <button class="popup__button" type="button"><i class="fa-solid fa-arrow-down"></i> Пополнить</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="popup__section popup__send">
+
+        <div class="popup__container">
+
+            <div class="pop__close"><i class="fa-solid fa-arrow-left"></i> Вернуться назад</div>
+
+            <h1 class="pop__title">Отправить</h1>
+
+            <form class="popup__form" action="" method="post">
+
+                <label class="popup__label" for="to__send">
+                    <span class="popup__label-span">Кому</span>
+                    <input placeholder="0e...4JnB" class="popup__label-input" id="to__send" type="text" name="to__send" required>
+                </label>
+
+                <label class="popup__label" for="sum__send">
+                    <span class="popup__label-span">Сумма</span>
+                    <input class="popup__label-input" id="sum__send" type="number" name="sum__send" required>
+                </label>
+
+                <label class="popup__label" for="assets__get">
+                    <span class="popup__label-span">Активы</span>
+                    <div id="assets__send" class="selector__wrap">
+                        <div class="selector__head">
+                            <div class="selector__title">
+                                <span class="selector__img">
+                                    <img src="../img/coin/etherium.png" alt="">
+                                </span>
+
+                                <div>
+                                    <span class="selector__name">Etherium</span>
+                                    <p class="selector__more">1.02 ETH</p>
+                                </div>
+                            </div>
+
+                            <div class="selector__arrow"><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+
+                        <div class="selector__pop">
+
+                        </div>
+                    </div>
+                </label>
+
+                <button class="popup__button" type="button"><i class="fa-solid fa-arrow-up"></i> Отправить</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="bth__popup bth__chart-p">
+        <div class="bth-p__container chart__popup">
+            <div class="bp__text">Вскоре будет доступно</div>
+        </div>
+    </div>
+
+    <div class="bth__popup bth__farm-p">
+        <div class="bth-p__container farm__popup">
+            <div class="bp__text">Вскоре будет доступно</div>
+        </div>
+    </div>
+
+    <div class="bth__popup bth__get-p">
+
+        <div class="bth-p__container get__popup">
+
+            <span>Выберите способ пополнения</span>
+
+            <div class="btp__container">
+                <a onclick="" class="btp-wrap">
+                    <div class="btp-title">
+                        <span>
+                           <img src="../img/coin/ton.png" alt="">
+                        </span>
+                        <p>TON wallet</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+
+                <a onclick="" class="btp-wrap">
+                    <div class="btp-title">
+                        <span>
+                           <img src="../img/coin/ton.png" alt="">
+                        </span>
+                        <p>Перевод на адрес TON</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+
+                <!-- GET запрос coin=1, 1 - это, например, etherium, 2 - usdt, и т.д., ну или свои тип, имя запроса -->
+                <a href="deposit.html?coin=1" class="btp-wrap">
+                    <div class="btp-title">
+                        <span>
+                           <img src="../img/coin/usd.png" alt="">
+                        </span>
+                        <p>Перевод с кошелька USD</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div style="position: relative">
+        <div class="bell__popup">
+            <ul class="ul__notice">
+                <li class="bell__notice bell__notice-1">
+                    <div class="nt__Head">
+                        <div class="nt__title">Новое уведомление</div>
+                        <div class="nt__time">26 апр 18:21</div>
+                    </div>
+                    <div class="nt__text">
+                        Lorem ipsum dolor sit amet + 15%
+                    </div>
+                    <div onclick="" class="nt__disable">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </li>
+
+                <li class="bell__notice bell__notice-1">
+                    <div class="nt__Head">
+                        <div class="nt__title">Новое уведомление</div>
+                        <div class="nt__time">26 апр 15:23</div>
+                    </div>
+                    <div class="nt__text">
+                        Lorem ipsum dolor sit amet + 15%
+                    </div>
+                    <div onclick="" class="nt__disable">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </li>
+
+                <li class="bell__notice bell__notice-1">
+                    <div class="nt__Head">
+                        <div class="nt__title">Новое уведомление</div>
+                        <div class="nt__time">26 апр 14:16</div>
+                    </div>
+                    <div class="nt__text">
+                        Lorem ipsum dolor sit amet + 15%
+                    </div>
+                    <div onclick="" class="nt__disable">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+:root {
+
+    --font        : normal 16px 'Montserrat', sans-serif;
+    --family      : 'Montserrat', sans-serif;
+
+    --bgMain      : #0C0C2C;
+    --bgBlock     : #1e1e1e;
+    --bgGlass     : #070720;
+    --bgGlassWh   : #0e0e38;
+    --bgOk        : #233025;
+    --bgError     : #302325;
+    --bgActive    : #6505B4;
+    --bgMBlock    : #523F62;
+    --bgBlue      : #1F224B;
+    --bthPopCont  : #0F0F39;
+    --bth500      : #111447;
+    --bgMainRBG   : rgba(12, 12, 44, 1);
+    --bgBlue700   : rgb(41, 44, 95);
+    --bgBlue600   : rgba(28, 66, 109, 0.34);
+    --bgBlue500   : rgba(50, 50, 136, 0.45);
+    --bgPopup     : rgba(19, 22, 81, 0.85);
+    --bg300       : rgb(255 255 255 / 3%);
+
+    --colorMain   : #fafafa;
+    --colorAct    : #3170B8;
+    --colorGrey   : #adadad;
+    --color500    : #8C8C8C;
+    --color700    : #CCCCCC;
+    --color400    : #383A46;
+    --color300    : #2927821a;
+    --color100    : #383a4652;
+    --colorOk     : #3170B8;
+    --colorError  : #AE4961;
+    --colorBlack  : #818181;
+    --colorGrass  : #ffffff05;
+
+    --borderColor : #252525;
+
+    --bthLinear   : linear-gradient(1turn, #1d1b48, #212954);
+    --formLinear  : linear-gradient(1turn, #1d1b48a1, #212954e8);
+    --barLinear   : linear-gradient(1turn, #0e0e38, #141446);
+    --textLinear  : linear-gradient(66deg, #CD1D9C 0%, #6505B4 100%);
+    --blLinear    : linear-gradient(1turn, rgba(205, 29, 156, 1), rgba(101, 5, 180, 1));
+    --grLinear    : linear-gradient(1turn, rgba(55, 25, 83, 1), rgba(28, 66, 109, 0));
+    --bgLinear    : linear-gradient(90deg, rgba(55, 25, 83, 1), rgba(28, 66, 109, 0));
+    --actLinear   : linear-gradient(90deg, rgba(205, 29, 156, 1), rgba(101, 5, 180, 1));
+    --rfBgLinear  : linear-gradient(90deg, rgba(55, 25, 83, 1), rgba(28, 66, 109, 0));
+    --bth500Bg    : linear-gradient(230deg, #371953 0%, rgba(31, 34, 75, 0.50) 100%);
+    --topBgLinear : linear-gradient(180deg, rgba(81, 19, 72, 0.25) 0%, rgba(101, 5, 180, 0.25) 100%);
+
+    --boxPop      : 2px 4px 15px 5px rgba(0, 0, 0, 0.40);
+    --boxLink     : 0px 10px 20px 0px rgba(0, 0, 0, 0.20);
+    --boxPop2     : 0 20px 40px 0 rgb(0 0 0 / 30%);
+
+    --EasyInOut   : all 0.2s ease-in-out;
+    --LinearPop   : cubic-bezier(.4, 0, .2, 1) .20s transform;
+    --Linear      : ease-in-out 0.1s transform;
+
+}
