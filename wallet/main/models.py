@@ -1,15 +1,29 @@
 from django.db import models
 
 
+class Coin(models.Model):
+    name = models.CharField('Название', max_length=255, unique=True),
+    img = models.CharField('Иконка', max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Валюта'
+        verbose_name_plural = 'Валюта'
+
+
 class Users(models.Model):
-    email = models.CharField('Электронная почта', max_length=255, null=False)
-    code = models.CharField('Ключ подписи', max_length=255, null=False)
-    progress = models.CharField('Прогресс', max_length=255, null=False)
-    salt = models.CharField('Соль пароля', max_length=255, null=False)
-    password = models.CharField('Пароль', max_length=255, null=False)
-    lvl = models.CharField('Уровень', max_length=255, null=False)
-    name = models.CharField('Имя', max_length=255, null=False)
-    img = models.CharField('Фото', max_length=255, null=False)
+    email = models.CharField('Электронная почта', max_length=255, unique=True)
+    code = models.CharField('Ключ подписи', max_length=255, unique=True)
+    progress = models.CharField('Прогресс', max_length=255, default='0')
+    salt = models.CharField('Соль пароля', max_length=255)
+    password = models.CharField('Пароль', max_length=255)
+    lvl = models.CharField('Уровень', max_length=255, default='1')
+    name = models.CharField('Имя', max_length=255, unique=True)
+    img = models.CharField('Фото', max_length=255, default='placeholder.png')
+    date = models.DateTimeField('Дата', auto_now_add=True)
+    update = models.DateTimeField('Обновлено', auto_now=True)
 
     def __str__(self):
         return self.name
@@ -17,16 +31,21 @@ class Users(models.Model):
     class Meta:
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
+        ordering = ['-date']
+        indexes = [
+            models.Index(fields=['-date'])
+        ]
 
 
 class Assets(models.Model):
-    exp = models.CharField('Короткое название', max_length=255, null=False)
-    state = models.CharField('Состояние', max_length=255, null=False)
-    name = models.CharField('Название', max_length=255, null=False)
-    mod = models.CharField('Изменение', max_length=255, null=False)
-    img = models.CharField('Иконка', max_length=255, null=False)
-    type = models.IntegerField('Тип изменения', null=False)
-    user = models.IntegerField('Пользователь', null=False)
+    exp = models.CharField('Короткое название', max_length=255)
+    state = models.CharField('Состояние', max_length=255)
+    name = models.CharField('Название', max_length=255)
+    mod = models.CharField('Изменение', max_length=255)
+    img = models.CharField('Иконка', max_length=255)
+    type = models.IntegerField('Тип изменения')
+    user = models.IntegerField('Пользователь')
+    date = models.DateTimeField('Дата', auto_now_add=True)
 
     def __str__(self):
         return self.name
@@ -34,20 +53,42 @@ class Assets(models.Model):
     class Meta:
         verbose_name = 'Актив'
         verbose_name_plural = 'Активы'
+        ordering = ['-date']
+        indexes = [
+            models.Index(fields=['-date'])
+        ]
+
+
+class TransactionsManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Transactions.Status.ACCESS)
 
 
 class Transactions(models.Model):
-    coin = models.CharField('Валюта', max_length=255, null=False)
-    sum = models.CharField('Сумма', max_length=255, null=False)
-    date = models.CharField('Дата', max_length=255, null=False)
-    sender = models.IntegerField('Отправитель', null=False)
-    state = models.IntegerField('Состояние', null=False)
-    user = models.IntegerField('Получатель', null=False)
-    type = models.IntegerField('Тип', null=False)
+    class Status(models.IntegerChoices):
+        CANCELED = 0, 'Отменена'
+        PROGRESS = 2, 'В процессе'
+        ACCESS = 1, 'Прошла'
+
+    coin = models.CharField('Валюта', max_length=255)
+    sum = models.CharField('Сумма', max_length=255)
+    sender = models.IntegerField('Отправитель')
+    state = models.IntegerField('Состояние')
+    user = models.IntegerField('Получатель')
+    type = models.IntegerField('Тип')
+    status = models.IntegerField('Статус', choices=Status.choices, default=Status.PROGRESS)
+    date = models.DateTimeField('Дата', auto_now_add=True)
+
+    objects = models.Manager()
+    access = TransactionsManager()
 
     def __str__(self):
-        return f"{self.sender} & {self.sum} {self.coin}"
+        return self.date
 
     class Meta:
         verbose_name = 'Транзакция'
         verbose_name_plural = 'Транзакции'
+        ordering = ['-date']
+        indexes = [
+            models.Index(fields=['-date'])
+        ]

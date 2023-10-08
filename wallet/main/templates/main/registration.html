@@ -12,6 +12,14 @@
 <link rel="stylesheet" href="{% static "styles/auth.css" %}" />
 {% endblock %}
 
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
 {% block content %}
     <main class="wrapper" id="wrapper">
 
@@ -39,12 +47,10 @@
                     {% csrf_token %}
 
                     {% for field in form %}
-
                         <label class="popup__label label__email" for="{{ field.auto_id }}">
                             <span class="popup__label-span">{{ field.label }}</span>
                             {{ field }}
                         </label>
-
                     {% endfor %}
 
                     <button class="popup__button create__reg" type="submit"><i class="fa-solid fa-user-plus"></i> Регистрация</button>
