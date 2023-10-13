@@ -5,7 +5,8 @@ from main.views import page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls'))
+    path('ajax/', include('main.ajax.urls')),
+    path('', include('main.urls')),
 ]
 
 handler404 = page_not_found

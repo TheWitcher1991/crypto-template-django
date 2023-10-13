@@ -41,11 +41,11 @@
 
             <div class="auth__container">
 
-                <form class="popup__form" action="" method="post">
+                <form class="popup__form login__from" action="" method="post">
 
                     <span class="form__h1">Авторизация</span>
 
-                     {% csrf_token %}
+                    {% csrf_token %}
 
                     {% for field in form %}
                         <label class="popup__label label__email" for="{{ field.auto_id }}">
@@ -58,7 +58,7 @@
                      {% endfor %}
 
 
-                    <button class="popup__button" type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Войти</button>
+                    <button class="popup__button login" type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Войти</button>
 
                     <div class="form__a">
                         У вас нет аккаунта?
@@ -72,4 +72,31 @@
         </div>
 
     </main>
+
+    <script>
+        document.querySelector('.login').addEventListener('click', e => {
+            e.preventDefault()
+
+            let csrf = document.querySelector('input[name="csrfmiddlewaretoken"]').value,
+                email = document.querySelector('#id_email').value,
+                password = document.querySelector('#id_password').value
+
+            ajax({
+                type: 'json',
+                method: 'POST',
+                async: true,
+                cache: false,
+                url: '/ajax/login',
+                data: `csrfmiddlewaretoken=${csrf}&email=${email}&password=${password}`,
+                ok: (xhr) => {
+                    if (xhr.status === 200) {
+                        window.location = '/wallet'
+                    }
+                },
+                error: (xhr) => {
+                    console.log(xhr)
+                }
+            })
+        })
+    </script>
 {% endblock %}

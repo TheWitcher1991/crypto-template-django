@@ -5,6 +5,8 @@ class Coin(models.Model):
     name = models.CharField('Название', max_length=255, unique=True),
     img = models.CharField('Иконка', max_length=255)
 
+    objects = models.Manager()
+
     def __str__(self):
         return self.name
 
@@ -19,11 +21,15 @@ class Users(models.Model):
     progress = models.CharField('Прогресс', max_length=255, default='0')
     salt = models.CharField('Соль пароля', max_length=255)
     password = models.CharField('Пароль', max_length=255)
+    ip = models.CharField('IP адрес', max_length=255, blank=True)
+    session = models.CharField('Токен сессии', max_length=255, blank=True)
     lvl = models.CharField('Уровень', max_length=255, default='1')
     name = models.CharField('Имя', max_length=255, unique=True)
     img = models.CharField('Фото', max_length=255, default='placeholder.png')
     date = models.DateTimeField('Дата', auto_now_add=True)
     update = models.DateTimeField('Обновлено', auto_now=True)
+
+    objects = models.Manager()
 
     def __str__(self):
         return self.name
@@ -38,14 +44,21 @@ class Users(models.Model):
 
 
 class Assets(models.Model):
+    class Status(models.IntegerChoices):
+        UNKNOWN = 0, 'Не изменилось'
+        DOWN = 1, 'Упало'
+        UP = 2, 'Поднялось'
+
     exp = models.CharField('Короткое название', max_length=255)
     state = models.CharField('Состояние', max_length=255)
     name = models.CharField('Название', max_length=255)
     mod = models.CharField('Изменение', max_length=255)
     img = models.CharField('Иконка', max_length=255)
-    type = models.IntegerField('Тип изменения')
+    type = models.IntegerField('Тип изменения', choices=Status.choices, default=Status.UNKNOWN)
     user = models.IntegerField('Пользователь')
     date = models.DateTimeField('Дата', auto_now_add=True)
+
+    objects = models.Manager()
 
     def __str__(self):
         return self.name
@@ -59,9 +72,14 @@ class Assets(models.Model):
         ]
 
 
-class TransactionsManager(models.Manager):
+class TransactionsAccessManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=Transactions.Status.ACCESS)
+
+
+class TransactionsCanceledManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Transactions.Status.CANCELED)
 
 
 class Transactions(models.Model):
@@ -80,7 +98,8 @@ class Transactions(models.Model):
     date = models.DateTimeField('Дата', auto_now_add=True)
 
     objects = models.Manager()
-    access = TransactionsManager()
+    access = TransactionsAccessManager()
+    canceled = TransactionsCanceledManager()
 
     def __str__(self):
         return self.date
